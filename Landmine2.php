@@ -19,8 +19,8 @@ for($setBomb = 0; $setBomb < $maxBomb; $setBomb++) {
     }
 }
 
-for($x = 0; $x < 10; $x++){
-    for($y = 0; $y < 10; $y++){
+for($x = 0; $x < 60; $x++){
+    for($y = 0; $y < 50; $y++){
         if($arr[$x][$y]!= 'M'){
             if ($arr[$x+1][$y] == 'M') {
                 $arr[$x][$y]++;
