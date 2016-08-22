@@ -56,7 +56,5 @@ foreach($arr as $value) {
     }
     $result .= "N";
 }
-//  echo substr_replace($result,'',-1);
+ echo substr_replace($result,'',-1);
 $time2 = microtime(true);
-
-echo ($time2-$time1);
