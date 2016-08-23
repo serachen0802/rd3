@@ -1,8 +1,8 @@
 <?php
 $time1 = microtime(true);
 $maxBomb = 1200;
-for($x=0; $x<60; $x++){
-    for($y=0; $y<50; $y++){
+for($x=0; $x<50; $x++){
+    for($y=0; $y<60; $y++){
         $arr[$x][$y]='0';
     }
 }
@@ -10,8 +10,8 @@ for($x=0; $x<60; $x++){
 for($setBomb = 0; $setBomb < $maxBomb; $setBomb++) {
     while(true) {
         // 隨機產生一個炸彈
-        $row = rand(0, 59);
-        $column = rand(0, 49);
+        $row = rand(0, 49);
+        $column = rand(0, 59);
         if ($arr[$row][$column] != 'M') {
             $arr[$row][$column] = 'M';
             break;
@@ -19,8 +19,8 @@ for($setBomb = 0; $setBomb < $maxBomb; $setBomb++) {
     }
 }
 
-for($x = 0; $x < 60; $x++){
-    for($y = 0; $y < 50; $y++){
+for($x = 0; $x < 50; $x++){
+    for($y = 0; $y < 60; $y++){
         if($arr[$x][$y]!= 'M'){
             if ($arr[$x+1][$y] == 'M') {
                 $arr[$x][$y]++;
