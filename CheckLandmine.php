@@ -3,9 +3,9 @@ header("content-type: text/html; charset=utf-8");
 $map = $_GET['map'];
 $flag = true;
 $result = "";
-
+if(isset($map)){
 if (strlen($map)!=109) {
-    $result .= "輸入長度錯誤。";
+    $result .= "輸入長度錯誤，你的長度為".strlen($map)."。";
     $flag = false;
 }
 
@@ -17,7 +17,7 @@ if ($notN == 'N'){
 }
 
 if (!preg_match("/^([0-8MN]+)$/",$map)) {
-    $result .= "字串內有不合法字元, 只能有0~8, M, N";
+    $result .= "字串內有不合法字元, 只能有0~8, 大寫M, N。";
     $flag = false;
 }
 
@@ -33,10 +33,10 @@ if ($countN < 9){
 // 炸彈的數量需為40
 $countM = substr_count($map,"M");
 if ($countM > 40) {
-    $result .= "炸彈數量大於40。";
+    $result .= "炸彈數量大於40，共有".$countM."個。";
     $flag = false;
 }elseif ($countM < 40){
-    $result .= "炸彈數量大於40。";
+    $result .= "炸彈數量小於40，只有".$countM."個。";
     $flag = false;
 }
 
@@ -85,7 +85,7 @@ for($x = 0; $x < 10; $x++){
             }
         }
         if ($arr[$x][$y] != $arr2[0][$x][$y]) {
-            $result .= "(".$x.",".$y.")數字有誤。";
+            $result .= "(".$x.",".$y.")數字有誤，應該為".$arr2[0][$x][$y]."。";
             $flag = false;
         }
     }
@@ -95,4 +95,5 @@ if ($flag == true) {
     echo "符合。";
 } elseif ($flag == false){
     echo "不符合。".$result;
+}
 }
