@@ -42,6 +42,9 @@ if (isset($map)) {
     }
 
     $checkNum = explode('N', $map);
+    if (count($checkNum)!=10) {
+                $result .= "行數不對，應為10*10，你的行數為".count($checkNum)."*10";
+            }
     for ($i = 0; $i < 10; $i++) {
         $checkNum2 = preg_split('//', $checkNum[$i], -1, PREG_SPLIT_NO_EMPTY);
         $arr[$i] = $checkNum2;
