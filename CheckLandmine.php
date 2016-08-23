@@ -3,20 +3,19 @@
 header("content-type: text/html; charset=utf-8");
 $map = $_GET['map'];
 
-// $notN = substr($map, -1);
-// if ($notN == 'N'){
-//     echo "不符合。因為最後一個字元不可以是N<br>";
-// }
+$notN = substr($map, -1);
+if ($notN == 'N'){
+    echo "不符合。因為最後一個字元不可以是N<br>";
+}
 
-// $countM = substr_count($map,"M");
-// if ($countM > 40) {
-//     echo "不符合。因為炸彈數量大於40<br>";
-// }elseif ($countM < 40){
-//     echo "不符合。因為炸彈數量小於40<br>";
-// }
+$countM = substr_count($map,"M");
+if ($countM > 40) {
+    echo "不符合。因為炸彈數量大於40<br>";
+}elseif ($countM < 40){
+    echo "不符合。因為炸彈數量小於40<br>";
+}
 
 $checkNum = explode('N', $map);
-// var_dump( $checkNum);
 for ($i = 0; $i < 10; $i++) {
     $checkNum2 = preg_split('//', $checkNum[$i], -1, PREG_SPLIT_NO_EMPTY);
     $arr[$i] = $checkNum2;
