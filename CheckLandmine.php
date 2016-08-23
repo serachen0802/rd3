@@ -3,6 +3,7 @@ header("content-type: text/html; charset=utf-8");
 $map = $_GET['map'];
 $flag = true;
 $result = "";
+
 if (strlen($map)!=109) {
     $result .= "輸入長度錯誤。";
     $flag = false;
@@ -22,20 +23,20 @@ if (!preg_match("/^([0-8MN]+)$/",$map)) {
 
 $countN = substr_count($map,"N");
 if ($countN < 9){
-    $result = "N的數量太少。";
+    $result .= "N的數量太少。";
     $falg = false;
 } elseif ($countN > 9){
-    $result = "N的數量太多。";
+    $result .= "N的數量太多。";
     $falg = false;
 }
 
 // 炸彈的數量需為40
 $countM = substr_count($map,"M");
 if ($countM > 40) {
-    $result = "炸彈數量大於40。";
+    $result .= "炸彈數量大於40。";
     $flag = false;
 }elseif ($countM < 40){
-    $result = "炸彈數量大於40。";
+    $result .= "炸彈數量大於40。";
     $flag = false;
 }
 

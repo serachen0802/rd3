@@ -14,7 +14,7 @@ $aCheckMap = array(
  '2M4M4MM311NM4MMM7M5M3NM324MMM5MMN22124MM56MN1M22M44MMMN123M33M34MN01M3M43333N01122MM3MMN0011334M4MN222M2M3221NMM2122M100'
 );
 
-$map = $aCheckMap['7'];
+$map = $aCheckMap['9'];
 $flag = true;
 $result = "";
 if (strlen($map)!=109) {
